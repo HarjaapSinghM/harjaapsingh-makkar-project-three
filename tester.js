@@ -1,4 +1,3 @@
-$(document).ready(function () {
     // Check to see if there are any empty spaces in the board 
     // Confirms whether or not the board has been filled out 
 
@@ -86,7 +85,7 @@ $(document).ready(function () {
                 possibilityArray[x] = 0;
             }
         }
-        console.log("the array is" + possibilityArray)
+        console.log(possibilityArray)
         return possibilityArray
     }
 
@@ -109,6 +108,7 @@ $(document).ready(function () {
             // Find the first empty spot 
             for (x = 0; x < 9; x++) {
                 for (y = 0; y < 9; y++) {
+                    console.log("now considering x = " + x + " and y = " + y)
                     if (board[x][y] == 0) {
                         i = x;
                         j = y;
@@ -116,8 +116,12 @@ $(document).ready(function () {
                     }
 
                     else { continue }
-                }    
+                }   
+                break
             }
+          break
+          
+          console.log("i is " + i + "j is " + j + "board is " + board)
 
             // Get an array of possibilities for [i][j]
             possibilities = entryPossibilities(board, i, j);
@@ -194,9 +198,9 @@ $(document).ready(function () {
         }
 
 
-        SudokuBoard[0][0] = 0
-        SudokuBoard[0][1] = 0
-        SudokuBoard[0][2] = 0
+        SudokuBoard[0][0] = 0;
+        SudokuBoard[0][1] = 0;
+        SudokuBoard[0][2] = 0;
         SudokuBoard[0][3] = 3
         SudokuBoard[0][4] = 0
         SudokuBoard[0][5] = 0
@@ -280,4 +284,3 @@ $(document).ready(function () {
     }
 
     main();
-});
